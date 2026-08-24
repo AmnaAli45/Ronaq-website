@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Ronaq Luxury</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0f12;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333333;
+      -webkit-font-smoothing: antialiased;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .header {
+      background: linear-gradient(135deg, #11141a 0%, #1f242d 100%);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 2px solid #c5a880;
+    }
+    .brand-title {
+      color: #ffffff;
+      font-size: 28px;
+      letter-spacing: 6px;
+      font-weight: 300;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      color: #c5a880;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+    .content {
+      padding: 40px 30px;
+      color: #2c323f;
+      line-height: 1.6;
+    }
+    .greeting {
+      font-size: 22px;
+      font-weight: 600;
+      color: #11141a;
+      margin-bottom: 16px;
+    }
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(to right, #c5a880, transparent);
+      margin: 20px 0;
+    }
+    .brand-card {
+      background: #f8f9fa;
+      border-left: 3px solid #c5a880;
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .brand-card h4 {
+      margin: 0 0 6px 0;
+      color: #11141a;
+      font-size: 15px;
+    }
+    .brand-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+    }
+    .btn-container {
+      text-align: center;
+      margin: 35px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #11141a;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: 1px solid #c5a880;
+      text-transform: uppercase;
+    }
+    .footer {
+      background: #11141a;
+      padding: 30px;
+      text-align: center;
+      color: #8a94a6;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #c5a880;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="brand-title">R O N A Q</h1>
+      <div class="brand-sub">LUXURY MULTI-BRAND HOUSE</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="greeting">Welcome to the World of Ronaq, {{ user.first_name|default:user.email }}!</div>
+      <p>Thank you for joining Ronaq. Your account has been successfully created.</p>
+      
+      <p>Explore our curated collections of artisanal luxury across our premier partner houses:</p>
+
+      <div class="brand-card">
+        <h4>✨ Velora Skincare</h4>
+        <p>Advanced botanical formulations designed for radiant, timeless skin.</p>
+      </div>
+
+      <div class="brand-card">
+        <h4>✨ Elan Apparel</h4>
+        <p>Contemporary couture, premium silks, and bespoke tailoring.</p>
+      </div>
+
+      <div class="brand-card">
+        <h4>✨ Stryde Footwear</h4>
+        <p>Handcrafted Italian leather shoes and modern performance luxury.</p>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      {% if verification_url %}
+      <div style="background-color: #fcf8f2; border: 1px dashed #c5a880; padding: 18px; border-radius: 6px; text-align: center; margin: 25px 0;">
+        <p style="margin: 0 0 12px 0; color: #5a4325; font-size: 14px; font-weight: 500;">
+          Please confirm your email address to activate all checkout privileges:
+        </p>
+        <div class="btn-container" style="margin: 10px 0;">
+          <a href="{{ verification_url }}" class="btn" style="background-color: #c5a880; color: #11141a !important; border: none;">Verify My Email</a>
+        </div>
+        <p style="margin: 10px 0 0 0; font-size: 11px; color: #888;">
+          Or paste this link into your browser: <br>
+          <a href="{{ verification_url }}" style="color: #c5a880; word-break: break-all;">{{ verification_url }}</a>
+        </p>
+      </div>
+      {% else %}
+      <div class="btn-container">
+        <a href="{{ site_url }}" class="btn">Explore Collections</a>
+      </div>
+      {% endif %}
+
+      <p style="font-size: 13px; color: #777;">
+        If you have any questions or need concierge assistance, simply reply to this email or reach out to our dedicated support team at <a href="mailto:concierge@ronaq.com" style="color: #c5a880;">concierge@ronaq.com</a>.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p style="margin: 0 0 8px 0; color: #c5a880; font-weight: 500; letter-spacing: 1px;">RONAQ LUXURY INC.</p>
+      <p style="margin: 0 0 8px 0;">The pinnacle of couture, skincare, and footwear elegance.</p>
+      <p style="margin: 0;">&copy; 2026 Ronaq. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

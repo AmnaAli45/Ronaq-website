@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation #{{ order.order_number }} - Ronaq Luxury</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0f12;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333333;
+      -webkit-font-smoothing: antialiased;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .email-container {
+      max-width: 620px;
+      margin: 20px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .header {
+      background: linear-gradient(135deg, #11141a 0%, #1f242d 100%);
+      padding: 35px 20px;
+      text-align: center;
+      border-bottom: 2px solid #c5a880;
+    }
+    .brand-title {
+      color: #ffffff;
+      font-size: 26px;
+      letter-spacing: 5px;
+      font-weight: 300;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      color: #c5a880;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+    .content {
+      padding: 35px 30px;
+      color: #2c323f;
+    }
+    .order-badge {
+      display: inline-block;
+      background: #f4efe6;
+      color: #8c6b3e;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .order-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #11141a;
+      margin: 0 0 10px 0;
+    }
+    .meta-box {
+      background: #f8f9fa;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+    .meta-item {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+    .meta-item strong {
+      color: #11141a;
+    }
+    .items-table {
+      margin: 25px 0;
+    }
+    .items-table th {
+      text-align: left;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      padding: 10px 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .items-table td {
+      padding: 14px 8px;
+      border-bottom: 1px solid #f1f3f5;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+    .item-brand {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #c5a880;
+      font-weight: 600;
+    }
+    .item-name {
+      font-weight: 600;
+      color: #11141a;
+    }
+    .item-variant {
+      font-size: 12px;
+      color: #777;
+    }
+    .totals-table {
+      margin-top: 15px;
+      width: 100%;
+    }
+    .totals-table td {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+    .totals-table .total-row {
+      font-size: 17px;
+      font-weight: 700;
+      color: #11141a;
+      border-top: 2px solid #11141a;
+      padding-top: 12px;
+    }
+    .address-card {
+      background: #fdfbf7;
+      border: 1px solid #eee5d8;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 25px 0;
+    }
+    .address-card h4 {
+      margin: 0 0 10px 0;
+      color: #8c6b3e;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-container {
+      text-align: center;
+      margin: 30px 0 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #11141a;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 13px 30px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: 1px solid #c5a880;
+      text-transform: uppercase;
+    }
+    .footer {
+      background: #11141a;
+      padding: 30px;
+      text-align: center;
+      color: #8a94a6;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #c5a880;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="brand-title">R O N A Q</h1>
+      <div class="brand-sub">LUXURY MULTI-BRAND HOUSE</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <span class="order-badge">Order Confirmed</span>
+      <h2 class="order-title">Thank You for Your Order, {{ order.shipping_full_name }}!</h2>
+      <p style="margin: 0 0 15px 0; color: #555;">
+        We have received your order and our ateliers are carefully preparing your luxury selection for dispatch.
+      </p>
+
+      <!-- Order Metadata -->
+      <div class="meta-box">
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 50%; vertical-align: top;">
+              <div class="meta-item"><strong>Order Number:</strong> #{{ order.order_number }}</div>
+              <div class="meta-item"><strong>Date:</strong> {{ order.created_at|date:"F j, Y, g:i a" }}</div>
+              <div class="meta-item"><strong>Status:</strong> {{ order.get_status_display }}</div>
+            </td>
+            <td style="width: 50%; vertical-align: top;">
+              <div class="meta-item"><strong>Payment Method:</strong> {{ order.get_payment_method_display }}</div>
+              <div class="meta-item"><strong>Payment Status:</strong> {{ order.get_payment_status_display }}</div>
+              <div class="meta-item"><strong>Estimated Delivery:</strong> 2 - 4 Business Days</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Items Purchased -->
+      <h3 style="font-size: 16px; margin: 25px 0 10px 0; color: #11141a; text-transform: uppercase; letter-spacing: 1px;">
+        Order Items
+      </h3>
+
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th style="width: 55%;">Item</th>
+            <th style="width: 15%; text-align: center;">Qty</th>
+            <th style="width: 15%; text-align: right;">Unit Price</th>
+            <th style="width: 15%; text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in order.items.all %}
+          <tr>
+            <td>
+              {% if item.brand_name %}
+              <div class="item-brand">{{ item.brand_name }}</div>
+              {% endif %}
+              <div class="item-name">{{ item.product_name }}</div>
+              {% if item.variant_name %}
+              <div class="item-variant">Variant: {{ item.variant_name }}</div>
+              {% endif %}
+            </td>
+            <td style="text-align: center; color: #555;">{{ item.quantity }}</td>
+            <td style="text-align: right; color: #555;">${{ item.unit_price }}</td>
+            <td style="text-align: right; font-weight: 600; color: #11141a;">${{ item.total_price }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Order Totals -->
+      <table class="totals-table">
+        <tr>
+          <td style="text-align: right; width: 75%; color: #666;">Subtotal:</td>
+          <td style="text-align: right; width: 25%; font-weight: 500;">${{ order.subtotal }}</td>
+        </tr>
+        {% if order.discount and order.discount > 0 %}
+        <tr>
+          <td style="text-align: right; color: #27ae60;">Discount:</td>
+          <td style="text-align: right; color: #27ae60; font-weight: 500;">-${{ order.discount }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td style="text-align: right; color: #666;">Shipping Fee:</td>
+          <td style="text-align: right; font-weight: 500;">
+            {% if order.shipping_fee == 0 %}
+            <span style="color: #27ae60;">Complimentary</span>
+            {% else %}
+            ${{ order.shipping_fee }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr class="total-row">
+          <td style="text-align: right; padding-top: 10px;">Total Amount:</td>
+          <td style="text-align: right; padding-top: 10px; color: #11141a;">${{ order.total_amount }}</td>
+        </tr>
+      </table>
+
+      <!-- Shipping Address -->
+      <div class="address-card">
+        <h4>Shipping Destination</h4>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #333;">
+          <strong>{{ order.shipping_full_name }}</strong><br>
+          {{ order.shipping_address }}<br>
+          {{ order.city }}{% if order.postal_code %}, {{ order.postal_code }}{% endif %}<br>
+          Phone: {{ order.shipping_phone }}<br>
+          Email: {{ order.shipping_email }}
+        </p>
+      </div>
+
+      <div class="btn-container">
+        <a href="{{ site_url }}/cart" class="btn">View Order In Portal</a>
+        <p style="margin: 10px 0 0 0; font-size: 11px; color: #888;">
+          Or visit: <a href="{{ site_url }}/cart" style="color: #c5a880; word-break: break-all;">{{ site_url }}/cart</a>
+        </p>
+      </div>
+
+      <p style="font-size: 13px; color: #777; margin-top: 25px;">
+        Need to modify your address or have questions about delivery? Contact our concierge at <a href="mailto:concierge@ronaq.com" style="color: #c5a880;">concierge@ronaq.com</a>.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p style="margin: 0 0 8px 0; color: #c5a880; font-weight: 500; letter-spacing: 1px;">RONAQ LUXURY INC.</p>
+      <p style="margin: 0 0 8px 0;">Velora &bull; Elan &bull; Stryde</p>
+      <p style="margin: 0;">&copy; 2026 Ronaq. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
