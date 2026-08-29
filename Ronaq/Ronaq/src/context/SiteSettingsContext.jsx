@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { settingsAPI } from '../services/api';
+import defaultLogo from '../assets/logo.png';
 
 const DEFAULT_SETTINGS = {
   // Brand Identity & Logo
   site_name: 'RONAK',
   site_tagline: 'Luxury Collective',
   site_description: 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
-  logo_url: '/logo.png',
+  logo_url: defaultLogo,
   custom_logo_text: 'RONAK',
   subbrand_velora_tagline: 'Cosmetics & Skincare',
   subbrand_elan_tagline: 'Luxury Apparel',
@@ -77,9 +78,13 @@ export const SiteSettingsProvider = ({ children }) => {
       const res = await settingsAPI.getPublicSettings();
       if (res.data) {
         if (res.data.settings) {
+          const apiSettings = { ...res.data.settings };
+          if (!apiSettings.logo_url || apiSettings.logo_url === '/logo.png') {
+            apiSettings.logo_url = defaultLogo;
+          }
           setSettings(prev => ({
             ...prev,
-            ...res.data.settings,
+            ...apiSettings,
           }));
         }
         if (res.data.banners) {

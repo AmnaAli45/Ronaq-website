@@ -4,6 +4,7 @@ import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
 import { useAuth } from '../../context/AuthContext';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
+import defaultLogo from '../../assets/logo.png';
 import { SearchModal } from '../common/SearchModal';
 import { AuthModal } from '../common/AuthModal';
 import {
@@ -186,18 +187,18 @@ export const Navbar = () => {
 
               {/* Dynamic Brand Logo */}
               <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group min-w-0">
-                {settings.logo_url && !logoError ? (
-                  <img
-                    src={settings.logo_url}
-                    alt={settings.site_name || 'Store Logo'}
-                    onError={() => setLogoError(true)}
-                    className="h-8 sm:h-9 w-8 sm:w-9 rounded-lg object-contain shadow-sm group-hover:scale-105 transition-transform shrink-0"
-                  />
-                ) : (
-                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-br from-slate-900 via-amber-950 to-amber-700 flex items-center justify-center text-white shadow-md shadow-amber-900/20 group-hover:scale-105 transition-transform shrink-0">
-                    <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
-                  </div>
-                )}
+                <img
+                  src={(!logoError && settings.logo_url) ? settings.logo_url : defaultLogo}
+                  alt={settings.site_name || 'Store Logo'}
+                  onError={(e) => {
+                    if (e.target.src !== defaultLogo) {
+                      e.target.src = defaultLogo;
+                    } else {
+                      setLogoError(true);
+                    }
+                  }}
+                  className="h-8 sm:h-9 w-8 sm:w-9 rounded-lg object-contain shadow-sm group-hover:scale-105 transition-transform shrink-0 bg-slate-950"
+                />
                 <div className="flex flex-col min-w-0">
                   <span className="font-serif text-base sm:text-2xl font-bold tracking-wider text-slate-900 leading-none group-hover:text-amber-700 transition-colors truncate">
                     {settings.site_name || 'RONAK'}
@@ -410,18 +411,18 @@ export const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                {settings.logo_url && !logoError ? (
-                  <img
-                    src={settings.logo_url}
-                    alt={settings.site_name || 'Logo'}
-                    onError={() => setLogoError(true)}
-                    className="h-8 w-8 rounded-lg object-contain shadow-sm"
-                  />
-                ) : (
-                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 shadow-md">
-                    <Crown className="w-4 h-4 font-black" />
-                  </div>
-                )}
+                <img
+                  src={(!logoError && settings.logo_url) ? settings.logo_url : defaultLogo}
+                  alt={settings.site_name || 'Logo'}
+                  onError={(e) => {
+                    if (e.target.src !== defaultLogo) {
+                      e.target.src = defaultLogo;
+                    } else {
+                      setLogoError(true);
+                    }
+                  }}
+                  className="h-8 w-8 rounded-lg object-contain shadow-sm bg-slate-950"
+                />
                 <div>
                   <span className="font-serif text-lg font-bold tracking-wider text-white block leading-tight">{settings.site_name || 'RONAK'}</span>
                   <span className="text-[8px] uppercase font-bold tracking-widest text-amber-300">{settings.site_tagline || 'Luxury Collective'}</span>

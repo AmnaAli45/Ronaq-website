@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
+import defaultLogo from '../../assets/logo.png';
 import { Crown, Sparkles, Shirt, Footprints, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 
 export const Footer = () => {
@@ -15,18 +16,18 @@ export const Footer = () => {
         {/* Col 1 & 2: Brand Info */}
         <div className="lg:col-span-2 space-y-4">
           <Link to="/" className="flex items-center gap-2.5">
-            {settings.logo_url && !logoError ? (
-              <img
-                src={settings.logo_url}
-                alt={settings.site_name || 'Store Logo'}
-                onError={() => setLogoError(true)}
-                className="h-9 w-9 rounded-lg object-contain shadow-sm"
-              />
-            ) : (
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-900 shadow-md">
-                <Crown className="w-5 h-5" />
-              </div>
-            )}
+            <img
+              src={(!logoError && settings.logo_url) ? settings.logo_url : defaultLogo}
+              alt={settings.site_name || 'Store Logo'}
+              onError={(e) => {
+                if (e.target.src !== defaultLogo) {
+                  e.target.src = defaultLogo;
+                } else {
+                  setLogoError(true);
+                }
+              }}
+              className="h-9 w-9 rounded-lg object-contain shadow-sm bg-slate-900"
+            />
             <span className="font-serif text-2xl font-bold tracking-wider text-white">
               {settings.site_name || 'RONAK'}
             </span>
