@@ -2,7 +2,8 @@
     # Global options
 }
 
-:80, 13.205.9.221 {
+# Serve on Port 80 for Raw IP and direct HTTP connections
+:80, http://13.205.9.221 {
     encode zstd gzip
 
     # Django REST API endpoints
@@ -30,3 +31,24 @@
         reverse_proxy ronaq-frontend:80
     }
 }
+
+# Optional HTTPS for domain names (uncomment and replace with your domain when ready)
+# ronaq.pk, www.ronaq.pk {
+#     encode zstd gzip
+#
+#     handle /api/* {
+#         reverse_proxy ronaq-backend:8000
+#     }
+#     handle /admin/* {
+#         reverse_proxy ronaq-backend:8000
+#     }
+#     handle /static/* {
+#         reverse_proxy ronaq-backend:8000
+#     }
+#     handle /media/* {
+#         reverse_proxy ronaq-backend:8000
+#     }
+#     handle {
+#         reverse_proxy ronaq-frontend:80
+#     }
+# }

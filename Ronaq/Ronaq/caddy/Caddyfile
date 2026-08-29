@@ -2,7 +2,8 @@
     # Global options
 }
 
-:80, 13.205.9.221 {
+# Serve on Port 80 for Raw IP and direct HTTP connections
+:80, http://13.205.9.221 {
     encode zstd gzip
 
     # Django REST API endpoints
