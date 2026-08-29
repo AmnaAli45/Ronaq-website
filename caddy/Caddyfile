@@ -1,0 +1,64 @@
+{
+    # Global options
+}
+
+# HTTP Block (Cloudflare Flexible SSL & direct HTTP traffic)
+http://ronaq.pk, http://www.ronaq.pk, http://ronak.pk, http://www.ronak.pk, http://13.205.9.221 {
+    encode zstd gzip
+
+    # Django REST API endpoints
+    handle /api/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Administration Dashboard
+    handle /admin/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Collected Static Assets
+    handle /static/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Media and Uploaded Files
+    handle /media/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # React Frontend SPA
+    handle {
+        reverse_proxy ronaq-frontend:80
+    }
+}
+
+# HTTPS Block (Cloudflare Full SSL & direct HTTPS traffic)
+https://ronaq.pk, https://www.ronaq.pk, https://ronak.pk, https://www.ronak.pk {
+    tls internal
+    encode zstd gzip
+
+    # Django REST API endpoints
+    handle /api/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Administration Dashboard
+    handle /admin/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Collected Static Assets
+    handle /static/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Media and Uploaded Files
+    handle /media/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # React Frontend SPA
+    handle {
+        reverse_proxy ronaq-frontend:80
+    }
+}

@@ -322,7 +322,7 @@ export const AdminProductsPage = () => {
 
 
             <a
-              href="http://127.0.0.1:8000/admin/catalog/product/"
+              href="/admin/catalog/product/"
               target="_blank"
               rel="noreferrer"
               className="px-3.5 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 rounded-xl text-xs font-semibold flex items-center gap-1 transition-colors"

@@ -1,0 +1,107 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure SSH Key
+        env:
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          if [ -z "$SSH_KEY" ]; then
+            echo "Error: EC2_SSH_KEY secret is not set in GitHub repository settings!"
+            echo "Please go to Settings -> Secrets and variables -> Actions -> New repository secret"
+            echo "Add 'EC2_SSH_KEY' with the contents of your ronaq.pem file."
+            exit 1
+          fi
+          mkdir -p ~/.ssh/
+          printf "%s\n" "$SSH_KEY" > ~/.ssh/ec2_key.pem
+          chmod 600 ~/.ssh/ec2_key.pem
+          cat >> ~/.ssh/config <<END
+          Host ec2-target
+            HostName ${{ secrets.EC2_HOST || '13.205.9.221' }}
+            User ${{ secrets.EC2_USER || 'ubuntu' }}
+            IdentityFile ~/.ssh/ec2_key.pem
+            StrictHostKeyChecking no
+          END
+
+      - name: Deploy to EC2 via SSH
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST || '13.205.9.221' }}
+          EC2_USER: ${{ secrets.EC2_USER || 'ubuntu' }}
+        run: |
+          ssh ec2-target << 'EOF'
+            set -e
+            APP_DIR="/opt/apps/ronaq"
+            REPO_URL="https://github.com/AmnaAli45/Ronaq-website.git"
+
+            echo "=== Preparing application directory on EC2 ==="
+            sudo mkdir -p "$APP_DIR"
+            sudo chown -R $USER:$USER "$APP_DIR"
+
+            if [ ! -d "$APP_DIR/.git" ]; then
+              echo "Cloning repository..."
+              git clone "$REPO_URL" "$APP_DIR"
+            else
+              echo "Fetching latest changes..."
+              cd "$APP_DIR"
+              git fetch origin main
+              git reset --hard origin/main
+            fi
+
+            cd "$APP_DIR"
+
+            # Create default production .env if not present
+            if [ ! -f "$APP_DIR/.env" ]; then
+              echo "Generating default production .env file..."
+              cat > "$APP_DIR/.env" << 'ENVEOF'
+          SECRET_KEY=ronaq-prod-secret-key-$(openssl rand -hex 24)
+          DEBUG=False
+          ALLOWED_HOSTS=ronak.pk,www.ronak.pk,ronaq.pk,www.ronaq.pk,13.205.9.221,localhost,127.0.0.1,*
+          CSRF_TRUSTED_ORIGINS=https://ronak.pk,https://www.ronak.pk,https://ronaq.pk,https://www.ronaq.pk,http://ronak.pk,http://www.ronak.pk,http://13.205.9.221
+          FRONTEND_URL=https://ronak.pk
+          BASE_URL=https://ronak.pk
+          POSTGRES_DB=ronaq_db
+          POSTGRES_USER=ronaq_user
+          POSTGRES_PASSWORD=ronaq_secure_db_pass_$(openssl rand -hex 12)
+          EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+          BACKUP_KEEP_DAYS=14
+          ENVEOF
+            fi
+
+            echo "=== Building and restarting Docker services ==="
+            sudo docker compose build --pull
+            sudo docker compose up -d --remove-orphans
+
+            echo "=== Verifying running containers ==="
+            sudo docker compose ps
+
+            echo "=== Cleaning up dangling images ==="
+            sudo docker image prune -f || true
+
+            echo "=== Deployment finished successfully! ==="
+          EOF
+
+      - name: Health Check
+        run: |
+          TARGET_IP="${{ secrets.EC2_HOST || '13.205.9.221' }}"
+          echo "Waiting 15 seconds for services to initialize..."
+          sleep 15
+          echo "Checking HTTP status on http://${TARGET_IP}/..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://${TARGET_IP}/" || true)
+          echo "Received HTTP status code: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 301 ] || [ "$HTTP_STATUS" -eq 302 ]; then
+            echo "Health check PASSED!"
+          else
+            echo "Warning: Health check returned HTTP $HTTP_STATUS (may still be initializing)"
+          fi
