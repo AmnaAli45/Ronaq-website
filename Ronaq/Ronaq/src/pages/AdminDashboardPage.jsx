@@ -40,7 +40,7 @@ export const AdminDashboardPage = () => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [loggingIn, setLoggingIn] = useState(false);
 
-  const isAuthorized = Boolean(isAuthenticated && (user?.is_staff || user?.is_superuser || user?.role === 'ADMIN' || user?.role === 'STAFF' || user?.email === 'admin@ronaq.com'));
+  const isAuthorized = Boolean(isAuthenticated && (user?.is_staff || user?.is_superuser || user?.role === 'ADMIN' || user?.role === 'STAFF' || user?.email === 'admin@ronak.com' || user?.email === 'admin@ronaq.com'));
 
   const fetchDashboardStats = async () => {
     try {
@@ -86,13 +86,13 @@ export const AdminDashboardPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-amber-400 selection:text-slate-950 pb-24">
-      {/* Top Header Banner matching Ronaq Luxury Hero */}
+      {/* Top Header Banner matching Ronak Luxury Hero */}
       <div className="bg-gradient-to-r from-slate-900 via-amber-950 to-slate-900 text-white py-10 sm:py-12 px-4 sm:px-6 lg:px-8 border-b border-amber-500/20 shadow-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-amber-400">
               <Crown className="w-4 h-4 text-amber-400 animate-pulse" />
-              <span>Ronaq Executive Command Center</span>
+              <span>Ronak Executive Command Center</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white">
               Admin Management Portal

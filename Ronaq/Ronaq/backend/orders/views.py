@@ -180,7 +180,7 @@ class CheckoutView(APIView):
                     qty = int(it.get('quantity', 1))
                     product_obj = it.get('product') if isinstance(it.get('product'), dict) else {}
                     p_name = it.get('product_name') or product_obj.get('name') or 'Luxury Product'
-                    b_name = it.get('brand_name') or product_obj.get('brand') or 'Ronaq Luxury'
+                    b_name = it.get('brand_name') or product_obj.get('brand') or 'Ronak Luxury'
                     v_name = it.get('variant_name') or it.get('variant') or 'Standard'
                     img = it.get('image') or it.get('image_url') or product_obj.get('image') or ''
 

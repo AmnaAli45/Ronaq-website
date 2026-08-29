@@ -378,7 +378,7 @@ export const OrderConfirmationPage = () => {
 
             {/* Security Guarantee Badge */}
             <div className="text-center text-[10px] text-slate-400 flex items-center justify-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Ronaq 100% Genuine Luxury Assurance
+              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Ronak 100% Genuine Luxury Assurance
             </div>
 
           </div>

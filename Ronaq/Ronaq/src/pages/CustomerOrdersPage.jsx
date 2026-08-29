@@ -128,7 +128,7 @@ export const CustomerOrdersPage = () => {
         <div className="max-w-7xl mx-auto text-center space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Ronaq Customer Care</span>
+            <span>Ronak Customer Care</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-serif font-bold text-white tracking-tight">
             Track Your Luxury Orders
@@ -353,7 +353,7 @@ export const CustomerOrdersPage = () => {
                       )}
                       <div>
                         <span className="text-[9px] font-extrabold uppercase tracking-wider text-amber-700 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200">
-                          {item.brand_name || 'Ronaq'}
+                          {item.brand_name || 'Ronak'}
                         </span>
                         <p className="font-bold text-slate-900">{item.product_name}</p>
                         <p className="text-[11px] text-slate-500">
@@ -402,7 +402,7 @@ export const CustomerOrdersPage = () => {
                 <Package className="w-8 h-8 text-slate-300 mx-auto" />
                 <h4 className="font-bold text-sm text-slate-700">No orders placed yet</h4>
                 <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                  When you place orders on Ronaq, Velora, Elan, or Stryde, you will be able to track live delivery status right here.
+                  When you place orders on Ronak, Velora, Elan, or Stryde, you will be able to track live delivery status right here.
                 </p>
                 <Link
                   to="/"

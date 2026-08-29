@@ -6,7 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 import { HoverImageSlideshow } from './HoverImageSlideshow';
 import { Star, ShoppingBag, Heart, Eye, Edit3 } from 'lucide-react';
 
-export const ProductCard = ({ product, theme = 'ronaq' }) => {
+export const ProductCard = ({ product, theme = 'ronak' }) => {
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { user, isAuthenticated } = useAuth();

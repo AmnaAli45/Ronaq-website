@@ -71,7 +71,7 @@ export const Navbar = () => {
   const activeSubBrand = location.pathname.includes('/velora') ? 'velora'
     : location.pathname.includes('/elan') ? 'elan'
     : location.pathname.includes('/stryde') ? 'stryde'
-    : 'ronaq';
+    : 'ronak';
 
   return (
     <>
@@ -82,7 +82,7 @@ export const Navbar = () => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               <div className="hidden md:flex items-center gap-2 font-medium">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                <span>{settings.top_welcome_text || `Welcome to ${settings.site_name || 'RONAQ'} — House of Premium Brands`}</span>
+                <span>{settings.top_welcome_text || `Welcome to ${settings.site_name || 'RONAK'} — House of Premium Brands`}</span>
               </div>
               <div className="text-center w-full md:w-auto font-medium text-[11px] md:text-xs">
                 {settings.announcement_text || '🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan'}
@@ -161,7 +161,7 @@ export const Navbar = () => {
               <div className="hidden md:flex items-center gap-2 text-[11px] text-slate-400">
                 <span>Need Help?</span>
                 <a href={getPhoneTel()} className="text-amber-400 font-bold hover:underline">
-                  {settings.phone_display || settings.phone_number || '1-800-RONAQ'}
+                  {settings.phone_display || settings.phone_number || '1-800-RONAK'}
                 </a>
               </div>
             </div>
@@ -198,7 +198,7 @@ export const Navbar = () => {
                     </div>
                     <div className="flex flex-col min-w-0">
                       <span className="font-serif text-base sm:text-2xl font-bold tracking-wider text-slate-900 leading-none group-hover:text-amber-700 transition-colors truncate">
-                        {settings.site_name || 'RONAQ'}
+                        {settings.site_name || 'RONAK'}
                       </span>
                       <span className="text-[7px] sm:text-[9px] uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em] text-amber-600 truncate">
                         {settings.site_tagline || 'Luxury Collective'}
@@ -422,7 +422,7 @@ export const Navbar = () => {
                       <Crown className="w-4 h-4 font-black" />
                     </div>
                     <div>
-                      <span className="font-serif text-lg font-bold tracking-wider text-white block leading-tight">{settings.site_name || 'RONAQ'}</span>
+                      <span className="font-serif text-lg font-bold tracking-wider text-white block leading-tight">{settings.site_name || 'RONAK'}</span>
                       <span className="text-[8px] uppercase font-bold tracking-widest text-amber-300">{settings.site_tagline || 'Luxury Collective'}</span>
                     </div>
                   </>

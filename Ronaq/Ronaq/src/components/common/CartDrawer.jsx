@@ -53,7 +53,7 @@ export const CartDrawer = () => {
           <div className="p-5 bg-slate-900 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <ShoppingBag className="w-5 h-5 text-amber-400" />
-              <h2 className="text-lg font-bold tracking-wide">Your Ronaq Cart</h2>
+              <h2 className="text-lg font-bold tracking-wide">Your Ronak Cart</h2>
               <span className="bg-amber-500/20 text-amber-300 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-amber-500/30">
                 {totalItems} {totalItems === 1 ? 'item' : 'items'}
               </span>

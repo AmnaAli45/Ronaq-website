@@ -3,11 +3,11 @@ import { settingsAPI } from '../services/api';
 
 const DEFAULT_SETTINGS = {
   // Brand Identity & Logo
-  site_name: 'RONAQ',
+  site_name: 'RONAK',
   site_tagline: 'Luxury Collective',
-  site_description: 'Ronaq is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
+  site_description: 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
   logo_url: '',
-  custom_logo_text: 'RONAQ',
+  custom_logo_text: 'RONAK',
   subbrand_velora_tagline: 'Cosmetics & Skincare',
   subbrand_elan_tagline: 'Luxury Apparel',
   subbrand_stryde_tagline: 'Athletic Footwear',
@@ -17,13 +17,13 @@ const DEFAULT_SETTINGS = {
   announcement_text: '🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan',
   announcement_badge: 'SPECIAL OFFER',
   announcement_link: '/velora',
-  top_welcome_text: 'Welcome to RONAQ — House of Premium Brands',
+  top_welcome_text: 'Welcome to RONAK — House of Premium Brands',
 
   // Contact & Phone
   phone_number: '+92 300 1234567',
-  phone_display: '1-800-RONAQ',
-  email: 'support@ronaq.com',
-  address: 'Ronaq Luxury HQ, Lahore, Pakistan',
+  phone_display: '1-800-RONAK',
+  email: 'support@ronak.com',
+  address: 'Ronak Luxury HQ, Lahore, Pakistan',
 
   // Shipping Thresholds & Currency
   free_shipping_threshold: 2500.00,
@@ -38,7 +38,7 @@ const DEFAULT_SETTINGS = {
 
   // Hero Banners
   home_hero_title: 'One Destination. Three Iconic Sub-Brands.',
-  home_hero_subtitle: 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronaq’s unified multi-brand house.',
+  home_hero_subtitle: 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronak’s unified multi-brand house.',
   home_hero_badge: 'The Premier Luxury Umbrella Brand',
   home_hero_image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80',
 

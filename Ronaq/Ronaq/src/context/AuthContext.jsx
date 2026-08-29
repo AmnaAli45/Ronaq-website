@@ -48,7 +48,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const loginAsAdmin = async () => {
-    return await login('admin@ronaq.com', 'admin123');
+    try {
+      return await login('admin@ronak.com', 'admin123');
+    } catch {
+      return await login('admin@ronaq.com', 'admin123');
+    }
   };
 
   const signup = async (userData) => {

@@ -246,7 +246,7 @@ export const AdminReviewsPage = () => {
           <div className="space-y-1.5">
             <h2 className="text-xl font-bold font-serif text-white">Staff / Admin Access Required</h2>
             <p className="text-xs text-slate-400">
-              Please sign in with your staff account (<code>admin@ronaq.com</code>) to manage customer reviews.
+              Please sign in with your staff account (<code>admin@ronak.com</code>) to manage customer reviews.
             </p>
           </div>
           <button
@@ -269,7 +269,7 @@ export const AdminReviewsPage = () => {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">
-                Ronaq Administration
+                Ronak Administration
               </span>
               <span className="text-slate-600">•</span>
               <span className="text-xs text-slate-400">Customer Feedback & Social Proof</span>

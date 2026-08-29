@@ -92,7 +92,7 @@ export const HomePage = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={settings.home_hero_image || 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80'}
-            alt={settings.site_name || 'Ronaq Luxury'}
+            alt={settings.site_name || 'Ronak Luxury'}
             className="w-full h-full object-cover object-center opacity-30 scale-105 animate-pulse-slow"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
@@ -118,7 +118,7 @@ export const HomePage = () => {
           </h1>
 
           <p className="text-xs sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-            {settings.home_hero_subtitle || 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronaq’s unified multi-brand house.'}
+            {settings.home_hero_subtitle || 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronak’s unified multi-brand house.'}
           </p>
 
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-md mx-auto sm:max-w-none">
@@ -149,13 +149,13 @@ export const HomePage = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-8">
         <div className="text-center space-y-2 max-w-2xl mx-auto">
           <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">
-            House of Ronaq
+            House of Ronak
           </span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900">
             Explore Our Three Iconic Sub-Brands
           </h2>
           <p className="text-xs text-slate-500">
-            Each sub-brand preserves its own distinct aesthetic, craftsmanship, and mood while sharing Ronaq's unified checkout experience.
+            Each sub-brand preserves its own distinct aesthetic, craftsmanship, and mood while sharing Ronak's unified checkout experience.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export const HomePage = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
           <div>
             <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">
-              Trending Across Ronaq
+              Trending Across Ronak
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900">
               Curated Best Sellers

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Status Update #{{ order.order_number }} - Ronaq Luxury</title>
+  <title>Order Status Update #{{ order.order_number }} - Ronak Luxury</title>
   <style>
     body {
       margin: 0;
@@ -115,7 +115,7 @@
   <div class="email-container">
     <!-- Header -->
     <div class="header">
-      <h1 class="brand-title">R O N A Q</h1>
+      <h1 class="brand-title">R O N A K</h1>
       <div class="brand-sub">LUXURY MULTI-BRAND HOUSE</div>
     </div>
 
@@ -129,7 +129,7 @@
 
       <p style="color: #555; font-size: 15px; line-height: 1.6;">
         Dear {{ order.shipping_full_name }},<br>
-        The status of your Ronaq luxury order has been updated to <strong>{{ order.get_status_display }}</strong>.
+        The status of your Ronak luxury order has been updated to <strong>{{ order.get_status_display }}</strong>.
       </p>
 
       <!-- Status Explanation -->
@@ -147,7 +147,7 @@
         {% elif order.status == 'DELIVERED' %}
         <h4 style="margin: 0 0 6px 0; color: #11141a;">Delivered</h4>
         <p style="margin: 0; font-size: 13px; color: #555;">
-          Your package has been successfully delivered. We hope you enjoy your exceptional pieces from the House of Ronaq.
+          Your package has been successfully delivered. We hope you enjoy your exceptional pieces from the House of Ronak.
         </p>
         {% elif order.status == 'CANCELLED' %}
         <h4 style="margin: 0 0 6px 0; color: #b91c1c;">Order Cancelled</h4>
@@ -193,15 +193,15 @@
       </div>
 
       <p style="font-size: 13px; color: #777; margin-top: 25px;">
-        If you have any questions regarding your shipment, our concierge team is always available at <a href="mailto:concierge@ronaq.com" style="color: #c5a880;">concierge@ronaq.com</a>.
+        If you have any questions regarding your shipment, our concierge team is always available at <a href="mailto:concierge@ronak.com" style="color: #c5a880;">concierge@ronak.com</a>.
       </p>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      <p style="margin: 0 0 8px 0; color: #c5a880; font-weight: 500; letter-spacing: 1px;">RONAQ LUXURY INC.</p>
+      <p style="margin: 0 0 8px 0; color: #c5a880; font-weight: 500; letter-spacing: 1px;">RONAK LUXURY INC.</p>
       <p style="margin: 0 0 8px 0;">Velora &bull; Elan &bull; Stryde</p>
-      <p style="margin: 0;">&copy; 2026 Ronaq. All rights reserved.</p>
+      <p style="margin: 0;">&copy; 2026 Ronak. All rights reserved.</p>
     </div>
   </div>
 </body>

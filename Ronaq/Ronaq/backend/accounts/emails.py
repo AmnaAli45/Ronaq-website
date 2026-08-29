@@ -20,7 +20,7 @@ def generate_verification_token(user):
 
 def send_welcome_email(user, request=None):
     """
-    Send a Welcome to Ronaq confirmation email to the newly registered user.
+    Send a Welcome to Ronak confirmation email to the newly registered user.
     Includes an optional email verification link.
     Non-blocking: logs any error without raising an exception.
     """
@@ -37,8 +37,8 @@ def send_welcome_email(user, request=None):
         uid, token = generate_verification_token(user)
         verification_url = f"{frontend_url}/verify-email?uid={uid}&token={token}"
 
-        subject = "Welcome to Ronaq Luxury"
-        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronaq Luxury <no-reply@ronaq.com>')
+        subject = "Welcome to Ronak Luxury"
+        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronak Luxury <no-reply@ronak.com>')
         to_email = [user.email]
 
         context = {

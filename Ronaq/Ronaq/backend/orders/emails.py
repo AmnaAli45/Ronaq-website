@@ -31,8 +31,8 @@ def send_order_confirmation_email(order):
             or getattr(settings, 'BASE_URL', None)
             or 'http://localhost:5173'
         ).rstrip('/')
-        subject = f"Order Confirmation #{order.order_number} - Ronaq Luxury"
-        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronaq Luxury <no-reply@ronaq.com>')
+        subject = f"Order Confirmation #{order.order_number} - Ronak Luxury"
+        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronak Luxury <no-reply@ronak.com>')
         to_email = [recipient]
 
         context = {
@@ -76,8 +76,8 @@ def send_order_status_update_email(order, old_status=None, new_status=None):
             or getattr(settings, 'BASE_URL', None)
             or 'http://localhost:5173'
         ).rstrip('/')
-        subject = f"Order #{order.order_number} Status Update: {current_status_display} - Ronaq Luxury"
-        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronaq Luxury <no-reply@ronaq.com>')
+        subject = f"Order #{order.order_number} Status Update: {current_status_display} - Ronak Luxury"
+        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'Ronak Luxury <no-reply@ronak.com>')
         to_email = [recipient]
 
         context = {

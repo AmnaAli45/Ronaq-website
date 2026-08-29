@@ -1,4 +1,4 @@
-// Ronaq Multi-Brand E-Commerce Product Catalog
+// Ronak Multi-Brand E-Commerce Product Catalog
 
 export const PRODUCTS = [
   // ==========================================

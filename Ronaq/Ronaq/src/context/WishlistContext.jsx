@@ -9,7 +9,7 @@ export const WishlistProvider = ({ children }) => {
   const { isAuthenticated } = useAuth();
   const [wishlist, setWishlist] = useState(() => {
     try {
-      const localData = localStorage.getItem('ronaq_wishlist');
+      const localData = localStorage.getItem('ronak_wishlist') || localStorage.getItem('ronaq_wishlist');
       return localData ? JSON.parse(localData) : [];
     } catch {
       return [];
@@ -30,7 +30,7 @@ export const WishlistProvider = ({ children }) => {
       setWishlist(prev => {
         const merged = Array.from(new Set([...prev, ...productIds.map(String)]));
         try {
-          localStorage.setItem('ronaq_wishlist', JSON.stringify(merged));
+          localStorage.setItem('ronak_wishlist', JSON.stringify(merged));
         } catch (e) {
           console.error(e);
         }
@@ -50,7 +50,7 @@ export const WishlistProvider = ({ children }) => {
   // Continuously sync to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('ronaq_wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('ronak_wishlist', JSON.stringify(wishlist));
     } catch (e) {
       console.error('Error saving wishlist to localStorage:', e);
     }
@@ -69,7 +69,7 @@ export const WishlistProvider = ({ children }) => {
 
     setWishlist(updatedWishlist);
     try {
-      localStorage.setItem('ronaq_wishlist', JSON.stringify(updatedWishlist));
+      localStorage.setItem('ronak_wishlist', JSON.stringify(updatedWishlist));
     } catch (e) {
       console.error(e);
     }
@@ -101,6 +101,7 @@ export const WishlistProvider = ({ children }) => {
   const clearWishlist = () => {
     setWishlist([]);
     try {
+      localStorage.removeItem('ronak_wishlist');
       localStorage.removeItem('ronaq_wishlist');
     } catch (e) {
       console.error(e);
@@ -131,8 +132,8 @@ export const WishlistProvider = ({ children }) => {
           id: pd.slug || String(pd.id),
           dbId: pd.id,
           name: pd.name,
-          brand: pd.brand?.name || 'Ronaq Luxury',
-          brandSlug: pd.brand?.slug || 'ronaq',
+          brand: pd.brand?.name || 'Ronak Luxury',
+          brandSlug: pd.brand?.slug || 'ronak',
           price: parseFloat(pd.price || 0),
           image: pd.image || (pd.images && pd.images[0]?.image_url) || '',
           category: pd.category?.name || 'Luxury',

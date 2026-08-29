@@ -87,11 +87,11 @@ class ProductImage(models.Model):
 
 class SiteSettings(models.Model):
     # Brand Identity & Logo
-    site_name = models.CharField(max_length=150, default='RONAQ')
+    site_name = models.CharField(max_length=150, default='RONAK')
     site_tagline = models.CharField(max_length=255, default='Luxury Collective')
-    site_description = models.TextField(default='Ronaq is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.')
+    site_description = models.TextField(default='Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.')
     logo_url = models.CharField(max_length=500, blank=True, default='')
-    custom_logo_text = models.CharField(max_length=100, blank=True, default='RONAQ')
+    custom_logo_text = models.CharField(max_length=100, blank=True, default='RONAK')
     subbrand_velora_tagline = models.CharField(max_length=100, default='Cosmetics & Skincare')
     subbrand_elan_tagline = models.CharField(max_length=100, default='Luxury Apparel')
     subbrand_stryde_tagline = models.CharField(max_length=100, default='Athletic Footwear')
@@ -101,16 +101,16 @@ class SiteSettings(models.Model):
     announcement_text = models.CharField(max_length=255, default='🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan')
     announcement_badge = models.CharField(max_length=100, default='SPECIAL OFFER')
     announcement_link = models.CharField(max_length=255, default='/velora')
-    top_welcome_text = models.CharField(max_length=255, default='Welcome to RONAQ — House of Premium Brands')
+    top_welcome_text = models.CharField(max_length=255, default='Welcome to RONAK — House of Premium Brands')
 
     # Contact & Helpline Phone
     phone_number = models.CharField(max_length=50, default='+92 300 1234567')
-    phone_display = models.CharField(max_length=50, default='1-800-RONAQ')
+    phone_display = models.CharField(max_length=50, default='1-800-RONAK')
     whatsapp_number = models.CharField(max_length=50, default='+92 300 1234567')
-    whatsapp_message = models.CharField(max_length=300, default='Hello! I am inquiring about products on Ronaq.')
+    whatsapp_message = models.CharField(max_length=300, default='Hello! I am inquiring about products on Ronak.')
     whatsapp_floating_enabled = models.BooleanField(default=False)
-    email = models.EmailField(max_length=150, default='support@ronaq.com')
-    address = models.CharField(max_length=255, default='Ronaq Luxury HQ, Lahore, Pakistan')
+    email = models.EmailField(max_length=150, default='support@ronak.com')
+    address = models.CharField(max_length=255, default='Ronak Luxury HQ, Lahore, Pakistan')
 
     # Shipping Thresholds & Currency
     free_shipping_threshold = models.DecimalField(max_digits=10, decimal_places=2, default=2500.00)
@@ -125,7 +125,7 @@ class SiteSettings(models.Model):
 
     # Hero Banners Customization
     home_hero_title = models.CharField(max_length=255, default='One Destination. Three Iconic Sub-Brands.')
-    home_hero_subtitle = models.TextField(default='Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronaq’s unified multi-brand house.')
+    home_hero_subtitle = models.TextField(default='Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronak’s unified multi-brand house.')
     home_hero_badge = models.CharField(max_length=150, default='The Premier Luxury Umbrella Brand')
     home_hero_image = models.CharField(max_length=500, default='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80')
 

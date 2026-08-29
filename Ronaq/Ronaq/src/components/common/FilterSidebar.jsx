@@ -14,7 +14,7 @@ export const FilterSidebar = ({
   onRatingChange,
   onResetFilters,
   totalResultsCount = 0,
-  brandTheme = 'ronaq',
+  brandTheme = 'ronak',
   isMobileOpen = false,
   onCloseMobile
 }) => {

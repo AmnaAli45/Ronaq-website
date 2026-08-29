@@ -21,6 +21,7 @@ export const ALLOWED_CITIES = DEFAULT_CITIES;
 
 
 export const COUPONS = {
+  'RONAK10': { discount: 0.10, label: '10% OFF Storewide' },
   'RONAQ10': { discount: 0.10, label: '10% OFF Storewide' },
   'VELORA20': { discount: 0.20, label: '20% OFF Velora Skincare' },
   'ELAN15': { discount: 0.15, label: '15% OFF Elan Luxury' },
@@ -28,6 +29,7 @@ export const COUPONS = {
   'WELCOME10': { discount: 0.10, label: '10% OFF Welcome Bonus' },
   'LUXURY25': { discount: 0.25, label: '25% OFF Luxury VIP' },
   'SAVE20': { discount: 0.20, label: '20% OFF Special Discount' },
+  'RONAK50': { discount: 0.50, label: '50% OFF Mega Promo' },
   'RONAQ50': { discount: 0.50, label: '50% OFF Mega Promo' }
 };
 
@@ -35,7 +37,7 @@ export const CartProvider = ({ children }) => {
   const { isAuthenticated } = useAuth();
   const [cart, setCart] = useState(() => {
     try {
-      const localData = localStorage.getItem('ronaq_cart');
+      const localData = localStorage.getItem('ronak_cart') || localStorage.getItem('ronaq_cart');
       return localData ? JSON.parse(localData) : [];
     } catch {
       return [];
@@ -46,14 +48,14 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [couponCode, setCouponCode] = useState(() => {
     try {
-      return localStorage.getItem('ronaq_coupon_code') || '';
+      return localStorage.getItem('ronak_coupon_code') || localStorage.getItem('ronaq_coupon_code') || '';
     } catch {
       return '';
     }
   });
   const [discountPercent, setDiscountPercent] = useState(() => {
     try {
-      const savedCode = localStorage.getItem('ronaq_coupon_code') || '';
+      const savedCode = localStorage.getItem('ronak_coupon_code') || localStorage.getItem('ronaq_coupon_code') || '';
       return COUPONS[savedCode]?.discount || 0;
     } catch {
       return 0;
@@ -87,7 +89,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
 
     try {
-      localStorage.setItem('ronaq_cart', JSON.stringify(cart));
+      localStorage.setItem('ronak_cart', JSON.stringify(cart));
     } catch (e) {
       console.error('Error saving cart to localStorage:', e);
     }
@@ -121,7 +123,7 @@ export const CartProvider = ({ children }) => {
         setCart(backendItems);
       } else {
         // If backend is empty, only clear cart if local cart was also empty
-        const localData = localStorage.getItem('ronaq_cart');
+        const localData = localStorage.getItem('ronak_cart') || localStorage.getItem('ronaq_cart');
         const localItems = localData ? JSON.parse(localData) : [];
         if (!localItems || localItems.length === 0) {
           setCart([]);
@@ -138,7 +140,7 @@ export const CartProvider = ({ children }) => {
     const syncLocalCartToBackend = async () => {
       if (isAuthenticated) {
         try {
-          const localData = localStorage.getItem('ronaq_cart');
+          const localData = localStorage.getItem('ronak_cart') || localStorage.getItem('ronaq_cart');
           const localItems = localData ? JSON.parse(localData) : [];
           if (localItems.length > 0) {
             // First fetch current backend items to avoid duplicates
@@ -290,6 +292,8 @@ export const CartProvider = ({ children }) => {
     setDiscountPercent(0);
     setCouponCode('');
     try {
+      localStorage.removeItem('ronak_coupon_code');
+      localStorage.removeItem('ronak_cart');
       localStorage.removeItem('ronaq_coupon_code');
       localStorage.removeItem('ronaq_cart');
     } catch (e) {
@@ -312,7 +316,7 @@ export const CartProvider = ({ children }) => {
       setCouponCode(formatted);
       setCouponError('');
       try {
-        localStorage.setItem('ronaq_coupon_code', formatted);
+        localStorage.setItem('ronak_coupon_code', formatted);
       } catch (e) {
         console.error(e);
       }
@@ -329,6 +333,7 @@ export const CartProvider = ({ children }) => {
     setDiscountPercent(0);
     setCouponError('');
     try {
+      localStorage.removeItem('ronak_coupon_code');
       localStorage.removeItem('ronaq_coupon_code');
     } catch (e) {
       console.error(e);

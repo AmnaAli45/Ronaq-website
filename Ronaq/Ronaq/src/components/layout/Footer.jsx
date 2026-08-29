@@ -26,13 +26,13 @@ export const Footer = () => {
                   <Crown className="w-5 h-5" />
                 </div>
                 <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                  {settings.site_name || 'RONAQ'}
+                  {settings.site_name || 'RONAK'}
                 </span>
               </>
             )}
           </Link>
           <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-            {settings.site_description || 'Ronaq is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.'}
+            {settings.site_description || 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.'}
           </p>
           <div className="pt-2 flex items-center gap-3 text-slate-400">
             {settings.instagram_url && (
@@ -96,7 +96,7 @@ export const Footer = () => {
           <ul className="space-y-3 text-xs text-slate-400">
             <li className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-              <span>{settings.address || 'Ronaq Luxury HQ, Lahore, Pakistan'}</span>
+              <span>{settings.address || 'Ronak Luxury HQ, Lahore, Pakistan'}</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="w-4 h-4 text-amber-500 shrink-0" />
@@ -106,8 +106,8 @@ export const Footer = () => {
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-              <a href={`mailto:${settings.email || 'support@ronaq.com'}`} className="hover:text-amber-300 transition-colors">
-                {settings.email || 'support@ronaq.com'}
+              <a href={`mailto:${settings.email || 'support@ronak.com'}`} className="hover:text-amber-300 transition-colors">
+                {settings.email || 'support@ronak.com'}
               </a>
             </li>
           </ul>
@@ -117,7 +117,7 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-slate-900 py-6 px-4 sm:px-6 text-xs text-slate-500 bg-slate-950">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} {settings.site_name || 'Ronaq'} {settings.site_tagline || 'Luxury Collective'}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {settings.site_name || 'Ronak'} {settings.site_tagline || 'Luxury Collective'}. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-slate-300">Privacy Policy</a>
             <a href="#" className="hover:text-slate-300">Terms of Service</a>

@@ -38,7 +38,7 @@ export const AdminSettingsPage = () => {
   const { settings, updateSettingsLocally, refreshSettings } = useSiteSettings();
   const navigate = useNavigate();
 
-  const isAuthorized = Boolean(isAuthenticated && (user?.is_staff || user?.is_superuser || user?.role === 'ADMIN' || user?.role === 'STAFF' || user?.email === 'admin@ronaq.com'));
+  const isAuthorized = Boolean(isAuthenticated && (user?.is_staff || user?.is_superuser || user?.role === 'ADMIN' || user?.role === 'STAFF' || user?.email === 'admin@ronak.com' || user?.email === 'admin@ronaq.com'));
 
   const [activeTab, setActiveTab] = useState('branding');
   const [formData, setFormData] = useState({ ...settings });
@@ -202,11 +202,11 @@ export const AdminSettingsPage = () => {
   const handleResetDefaults = () => {
     if (window.confirm('Are you sure you want to reset all store settings and banners back to default values?')) {
       const defaultState = {
-        site_name: 'RONAQ',
+        site_name: 'RONAK',
         site_tagline: 'Luxury Collective',
-        site_description: 'Ronaq is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
+        site_description: 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
         logo_url: '',
-        custom_logo_text: 'RONAQ',
+        custom_logo_text: 'RONAK',
         subbrand_velora_tagline: 'Cosmetics & Skincare',
         subbrand_elan_tagline: 'Luxury Apparel',
         subbrand_stryde_tagline: 'Athletic Footwear',
@@ -214,11 +214,11 @@ export const AdminSettingsPage = () => {
         announcement_text: '🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan',
         announcement_badge: 'SPECIAL OFFER',
         announcement_link: '/velora',
-        top_welcome_text: 'Welcome to RONAQ — House of Premium Brands',
+        top_welcome_text: 'Welcome to RONAK — House of Premium Brands',
         phone_number: '+92 300 1234567',
-        phone_display: '1-800-RONAQ',
-        email: 'support@ronaq.com',
-        address: 'Ronaq Luxury HQ, Lahore, Pakistan',
+        phone_display: '1-800-RONAK',
+        email: 'support@ronak.com',
+        address: 'Ronak Luxury HQ, Lahore, Pakistan',
 
         free_shipping_threshold: 2500.00,
         currency_symbol: 'Rs.',
@@ -228,7 +228,7 @@ export const AdminSettingsPage = () => {
         twitter_url: 'https://twitter.com',
         youtube_url: 'https://youtube.com',
         home_hero_title: 'One Destination. Three Iconic Sub-Brands.',
-        home_hero_subtitle: 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronaq’s unified multi-brand house.',
+        home_hero_subtitle: 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronak’s unified multi-brand house.',
         home_hero_badge: 'The Premier Luxury Umbrella Brand',
         home_hero_image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80',
         velora_hero_title: 'Velora Cosmetics & Skincare',
@@ -374,7 +374,7 @@ export const AdminSettingsPage = () => {
                       name="site_name"
                       value={formData.site_name || ''}
                       onChange={handleChange}
-                      placeholder="e.g. RONAQ"
+                      placeholder="e.g. RONAK"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:ring-2 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
@@ -490,7 +490,7 @@ export const AdminSettingsPage = () => {
                       </div>
                       <div>
                         <span className="font-serif text-2xl font-bold tracking-wider text-white block leading-none">
-                          {formData.site_name || 'RONAQ'}
+                          {formData.site_name || 'RONAK'}
                         </span>
                         <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-amber-400">
                           {formData.site_tagline || 'Luxury Collective'}
@@ -576,7 +576,7 @@ export const AdminSettingsPage = () => {
                     name="top_welcome_text"
                     value={formData.top_welcome_text || ''}
                     onChange={handleChange}
-                    placeholder="e.g. Welcome to RONAQ — House of Premium Brands"
+                    placeholder="e.g. Welcome to RONAK — House of Premium Brands"
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:ring-2 focus:ring-amber-500 focus:outline-none"
                   />
                 </div>
@@ -692,7 +692,7 @@ export const AdminSettingsPage = () => {
                       name="phone_display"
                       value={formData.phone_display || ''}
                       onChange={handleChange}
-                      placeholder="e.g. 1-800-RONAQ or +92 300 1234567"
+                      placeholder="e.g. 1-800-RONAK or +92 300 1234567"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:ring-2 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
@@ -709,7 +709,7 @@ export const AdminSettingsPage = () => {
                       name="email"
                       value={formData.email || ''}
                       onChange={handleChange}
-                      placeholder="support@ronaq.com"
+                      placeholder="support@ronak.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:ring-2 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
@@ -723,7 +723,7 @@ export const AdminSettingsPage = () => {
                       name="address"
                       value={formData.address || ''}
                       onChange={handleChange}
-                      placeholder="Ronaq Luxury HQ, Lahore, Pakistan"
+                      placeholder="Ronak Luxury HQ, Lahore, Pakistan"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:ring-2 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
@@ -765,7 +765,7 @@ export const AdminSettingsPage = () => {
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-xs text-slate-600 space-y-2">
                   <div className="flex justify-between">
                     <span className="font-semibold text-slate-500">Email:</span>
-                    <strong className="text-slate-900">{formData.email || 'support@ronaq.com'}</strong>
+                    <strong className="text-slate-900">{formData.email || 'support@ronak.com'}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span className="font-semibold text-slate-500">Address:</span>

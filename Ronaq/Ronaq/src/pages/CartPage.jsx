@@ -181,7 +181,7 @@ export const CartPage = () => {
           product_id: item.product?.dbId || (typeof item.product?.id === 'number' ? item.product.id : null),
           product_slug: item.product?.slug || (typeof item.product?.id === 'string' ? item.product.id : null),
           product_name: item.product?.name || item.productName || 'Luxury Item',
-          brand_name: item.product?.brand || item.brandName || 'Ronaq Luxury',
+          brand_name: item.product?.brand || item.brandName || 'Ronak Luxury',
           variant_name: item.variant || 'Standard',
           unit_price: item.price,
           quantity: item.quantity,
@@ -221,7 +221,7 @@ export const CartPage = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
             <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
-              Ronaq Unified Bag
+              Ronak Unified Bag
             </span>
             <h1 className="text-3xl font-serif font-bold">Shopping Cart</h1>
           </div>
@@ -271,7 +271,7 @@ export const CartPage = () => {
             <div className="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto text-amber-600">
               <ShoppingBag className="w-10 h-10" />
             </div>
-            <h2 className="text-2xl font-serif font-bold text-slate-900">Your Ronaq bag is empty</h2>
+            <h2 className="text-2xl font-serif font-bold text-slate-900">Your Ronak bag is empty</h2>
             <p className="text-xs text-slate-500 leading-relaxed max-w-sm mx-auto">
               Explore Velora skincare, Elan fashion, and Stryde shoes to add items to your cart.
             </p>
@@ -334,7 +334,7 @@ export const CartPage = () => {
                       <div className="flex-grow min-w-0 space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
-                            {item.product?.brand || item.product?.brandSlug || 'Ronaq Luxury'}
+                            {item.product?.brand || item.product?.brandSlug || 'Ronak Luxury'}
                           </span>
                           {item.variant && (
                             <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
@@ -585,7 +585,7 @@ export const CartPage = () => {
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-slate-900">Order Successfully Placed!</h3>
                 <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                  Thank you for shopping with Ronaq Luxury. Your order ID is <strong className="text-amber-700 font-extrabold">{orderDataResponse?.order_number || '#RNQ-CONFIRMED'}</strong>.
+                  Thank you for shopping with Ronak Luxury. Your order ID is <strong className="text-amber-700 font-extrabold">{orderDataResponse?.order_number || '#RNK-CONFIRMED'}</strong>.
                 </p>
                 <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-xs text-amber-900 text-left space-y-1.5">
                   <p className="font-bold">📦 Delivery & Payment Summary:</p>
@@ -602,7 +602,7 @@ export const CartPage = () => {
                   }}
                   className="px-6 py-3 rounded-full bg-slate-900 hover:bg-amber-700 text-white font-bold text-xs uppercase tracking-wider transition-colors"
                 >
-                  Back to Ronaq Home
+                  Back to Ronak Home
                 </button>
               </div>
             ) : (

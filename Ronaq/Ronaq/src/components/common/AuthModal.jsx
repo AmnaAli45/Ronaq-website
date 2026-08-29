@@ -73,10 +73,10 @@ export const AuthModal = ({ isOpen, onClose }) => {
 
         <div className="text-center mb-6">
           <h2 className="text-2xl font-serif font-bold text-slate-900">
-            {isLogin ? 'Welcome Back to Ronaq' : 'Create Your Account'}
+            {isLogin ? 'Welcome Back to Ronak' : 'Create Your Account'}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            {isLogin ? 'Sign in to access your saved cart, orders & profile' : 'Join Ronaq to enjoy seamless checkout & exclusive rewards'}
+            {isLogin ? 'Sign in to access your saved cart, orders & profile' : 'Join Ronak to enjoy seamless checkout & exclusive rewards'}
           </p>
         </div>
 
@@ -222,7 +222,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={() => {
-                setFormData(prev => ({ ...prev, email: 'admin@ronaq.com', password: 'admin123' }));
+                setFormData(prev => ({ ...prev, email: 'admin@ronak.com', password: 'admin123' }));
                 setIsLogin(true);
               }}
               className="px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-xs font-bold transition-colors cursor-pointer"
@@ -232,7 +232,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={() => {
-                setFormData(prev => ({ ...prev, email: 'customer@ronaq.com', password: 'customer123' }));
+                setFormData(prev => ({ ...prev, email: 'customer@ronak.com', password: 'customer123' }));
                 setIsLogin(true);
               }}
               className="px-3 py-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 rounded-xl text-xs font-bold transition-colors cursor-pointer"

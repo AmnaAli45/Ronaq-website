@@ -219,7 +219,7 @@ export const AdminOrdersPage = () => {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">
-                Ronaq Administration
+                Ronak Administration
               </span>
               <span className="text-slate-600">•</span>
               <span className="text-xs text-slate-400">Order Fulfilment Hub</span>
@@ -587,7 +587,7 @@ export const AdminOrdersPage = () => {
                       )}
                       <div>
                         <span className="text-[9px] font-extrabold uppercase tracking-wider text-amber-700 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200">
-                          {item.brand_name || 'Ronaq'}
+                          {item.brand_name || 'Ronak'}
                         </span>
                         <p className="font-bold text-slate-900">{item.product_name}</p>
                         <p className="text-[11px] text-slate-500">
