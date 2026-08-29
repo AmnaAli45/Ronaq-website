@@ -15,9 +15,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure SSH Key
+        env:
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
+          if [ -z "$SSH_KEY" ]; then
+            echo "Error: EC2_SSH_KEY secret is not set in GitHub repository settings!"
+            echo "Please go to Settings -> Secrets and variables -> Actions -> New repository secret"
+            echo "Add 'EC2_SSH_KEY' with the contents of your ronaq.pem file."
+            exit 1
+          fi
           mkdir -p ~/.ssh/
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/ec2_key.pem
+          printf "%s\n" "$SSH_KEY" > ~/.ssh/ec2_key.pem
           chmod 600 ~/.ssh/ec2_key.pem
           cat >> ~/.ssh/config <<END
           Host ec2-target
@@ -59,26 +67,27 @@ jobs:
               cat > "$APP_DIR/.env" << 'ENVEOF'
           SECRET_KEY=ronaq-prod-secret-key-$(openssl rand -hex 24)
           DEBUG=False
-          ALLOWED_HOSTS=13.205.9.221,localhost,127.0.0.1
-          CSRF_TRUSTED_ORIGINS=http://13.205.9.221,https://13.205.9.221
-          FRONTEND_URL=http://13.205.9.221
-          BASE_URL=http://13.205.9.221
+          ALLOWED_HOSTS=ronak.pk,www.ronak.pk,ronaq.pk,www.ronaq.pk,13.205.9.221,localhost,127.0.0.1,*
+          CSRF_TRUSTED_ORIGINS=https://ronak.pk,https://www.ronak.pk,https://ronaq.pk,https://www.ronaq.pk,http://ronak.pk,http://www.ronak.pk,http://13.205.9.221
+          FRONTEND_URL=https://ronak.pk
+          BASE_URL=https://ronak.pk
           POSTGRES_DB=ronaq_db
           POSTGRES_USER=ronaq_user
           POSTGRES_PASSWORD=ronaq_secure_db_pass_$(openssl rand -hex 12)
+          EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
           BACKUP_KEEP_DAYS=14
           ENVEOF
             fi
 
-            echo "=== Building and starting Docker services ==="
-            docker compose build --pull
-            docker compose up -d --remove-orphans
+            echo "=== Building and restarting Docker services ==="
+            sudo docker compose build --pull
+            sudo docker compose up -d --remove-orphans
 
             echo "=== Verifying running containers ==="
-            docker compose ps
+            sudo docker compose ps
 
             echo "=== Cleaning up dangling images ==="
-            docker image prune -f || true
+            sudo docker image prune -f || true
 
             echo "=== Deployment finished successfully! ==="
           EOF
