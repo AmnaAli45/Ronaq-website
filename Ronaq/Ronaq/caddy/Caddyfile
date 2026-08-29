@@ -2,8 +2,39 @@
     # Global options
 }
 
-# Serve on Port 80 for Raw IP and direct HTTP connections
-:80, http://13.205.9.221 {
+# HTTP Block (Handles Cloudflare Flexible SSL & direct port 80 traffic)
+http://ronaq.pk, http://www.ronaq.pk, http://ronak.pk, http://www.ronak.pk, http://13.205.9.221, :80 {
+    encode zstd gzip
+
+    # Django REST API endpoints
+    handle /api/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Administration Dashboard
+    handle /admin/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Collected Static Assets
+    handle /static/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Media and Uploaded Files
+    handle /media/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # React Frontend SPA
+    handle {
+        reverse_proxy ronaq-frontend:80
+    }
+}
+
+# HTTPS Block (Handles Cloudflare Full SSL & direct port 443 traffic)
+ronaq.pk, www.ronaq.pk, ronak.pk, www.ronak.pk {
+    tls internal
     encode zstd gzip
 
     # Django REST API endpoints
