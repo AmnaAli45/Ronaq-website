@@ -1,0 +1,32 @@
+{
+    # Global options
+}
+
+:80, 13.205.9.221 {
+    encode zstd gzip
+
+    # Django REST API endpoints
+    handle /api/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Administration Dashboard
+    handle /admin/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Django Collected Static Assets
+    handle /static/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # Media and Uploaded Files
+    handle /media/* {
+        reverse_proxy ronaq-backend:8000
+    }
+
+    # React Frontend SPA
+    handle {
+        reverse_proxy ronaq-frontend:80
+    }
+}

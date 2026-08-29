@@ -120,7 +120,7 @@ export const AdminDashboardPage = () => {
             )}
 
             <a
-              href="http://127.0.0.1:8000/admin/"
+              href="/admin/"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-slate-200 border border-white/10 text-xs font-bold transition-colors flex items-center gap-1.5"

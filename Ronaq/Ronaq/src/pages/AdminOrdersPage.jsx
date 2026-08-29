@@ -259,7 +259,7 @@ export const AdminOrdersPage = () => {
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> Refresh Data
             </button>
             <a
-              href="http://127.0.0.1:8000/admin/orders/order/"
+              href="/admin/orders/order/"
               target="_blank"
               rel="noreferrer"
               className="px-3.5 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 rounded-xl text-xs font-semibold flex items-center gap-1 transition-colors"
@@ -629,7 +629,7 @@ export const AdminOrdersPage = () => {
             {/* Footer Buttons */}
             <div className="flex items-center justify-between pt-2">
               <a
-                href={`http://127.0.0.1:8000/admin/orders/order/${selectedOrder.id}/change/`}
+                href={`/admin/orders/order/${selectedOrder.id}/change/`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-xs font-bold text-slate-600 hover:text-amber-700 flex items-center gap-1"
