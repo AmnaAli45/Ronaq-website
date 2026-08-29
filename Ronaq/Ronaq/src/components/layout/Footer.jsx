@@ -5,6 +5,7 @@ import { Crown, Sparkles, Shirt, Footprints, Mail, Phone, MapPin, Instagram, Fac
 
 export const Footer = () => {
   const { settings, getPhoneTel } = useSiteSettings();
+  const [logoError, setLogoError] = React.useState(false);
 
   return (
     <footer className="bg-slate-950 text-slate-300 font-sans border-t border-slate-800">
@@ -14,10 +15,11 @@ export const Footer = () => {
         {/* Col 1 & 2: Brand Info */}
         <div className="lg:col-span-2 space-y-4">
           <Link to="/" className="flex items-center gap-2.5">
-            {settings.logo_url ? (
+            {settings.logo_url && !logoError ? (
               <img
                 src={settings.logo_url}
                 alt={settings.site_name || 'Store Logo'}
+                onError={() => setLogoError(true)}
                 className="h-9 w-9 rounded-lg object-contain shadow-sm"
               />
             ) : (

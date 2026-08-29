@@ -36,6 +36,7 @@ export const Navbar = () => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const { totalItems, setIsCartOpen } = useCart();
   const { totalWishlist } = useWishlist();
@@ -185,10 +186,11 @@ export const Navbar = () => {
 
               {/* Dynamic Brand Logo */}
               <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group min-w-0">
-                {settings.logo_url ? (
+                {settings.logo_url && !logoError ? (
                   <img
                     src={settings.logo_url}
                     alt={settings.site_name || 'Store Logo'}
+                    onError={() => setLogoError(true)}
                     className="h-8 sm:h-9 w-8 sm:w-9 rounded-lg object-contain shadow-sm group-hover:scale-105 transition-transform shrink-0"
                   />
                 ) : (
@@ -408,10 +410,11 @@ export const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                {settings.logo_url ? (
+                {settings.logo_url && !logoError ? (
                   <img
                     src={settings.logo_url}
                     alt={settings.site_name || 'Logo'}
+                    onError={() => setLogoError(true)}
                     className="h-8 w-8 rounded-lg object-contain shadow-sm"
                   />
                 ) : (

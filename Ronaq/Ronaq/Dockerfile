@@ -14,6 +14,7 @@ COPY index.html ./
 COPY vite.config.js ./
 COPY tailwind.config.js ./
 COPY postcss.config.js ./
+COPY public/ ./public/
 COPY src/ ./src/
 
 # Pass environment variable for API base URL (relative for proxying)
