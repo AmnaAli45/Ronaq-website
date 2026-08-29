@@ -2,8 +2,8 @@
     # Global options
 }
 
-# HTTP Block (Handles Cloudflare Flexible SSL & direct port 80 traffic)
-http://ronaq.pk, http://www.ronaq.pk, http://ronak.pk, http://www.ronak.pk, http://13.205.9.221, :80 {
+# HTTP Block (Cloudflare Flexible SSL & direct HTTP traffic)
+http://ronaq.pk, http://www.ronaq.pk, http://ronak.pk, http://www.ronak.pk, http://13.205.9.221 {
     encode zstd gzip
 
     # Django REST API endpoints
@@ -32,8 +32,8 @@ http://ronaq.pk, http://www.ronaq.pk, http://ronak.pk, http://www.ronak.pk, http
     }
 }
 
-# HTTPS Block (Handles Cloudflare Full SSL & direct port 443 traffic)
-ronaq.pk, www.ronaq.pk, ronak.pk, www.ronak.pk {
+# HTTPS Block (Cloudflare Full SSL & direct HTTPS traffic)
+https://ronaq.pk, https://www.ronaq.pk, https://ronak.pk, https://www.ronak.pk {
     tls internal
     encode zstd gzip
 
