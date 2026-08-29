@@ -67,5 +67,8 @@ fi
 
 rm -f /tmp/db_status.txt
 
+# Ensure RONAK branding is active
+python manage.py set_ronak_branding || true
+
 echo "=== Starting Gunicorn Server ==="
 exec "$@"
