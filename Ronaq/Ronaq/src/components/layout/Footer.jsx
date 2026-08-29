@@ -13,23 +13,21 @@ export const Footer = () => {
 
         {/* Col 1 & 2: Brand Info */}
         <div className="lg:col-span-2 space-y-4">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2.5">
             {settings.logo_url ? (
               <img
                 src={settings.logo_url}
                 alt={settings.site_name || 'Store Logo'}
-                className="h-10 max-w-[160px] object-contain"
+                className="h-9 w-9 rounded-lg object-contain shadow-sm"
               />
             ) : (
-              <>
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-900 shadow-md">
-                  <Crown className="w-5 h-5" />
-                </div>
-                <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                  {settings.site_name || 'RONAK'}
-                </span>
-              </>
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-900 shadow-md">
+                <Crown className="w-5 h-5" />
+              </div>
             )}
+            <span className="font-serif text-2xl font-bold tracking-wider text-white">
+              {settings.site_name || 'RONAK'}
+            </span>
           </Link>
           <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
             {settings.site_description || 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.'}

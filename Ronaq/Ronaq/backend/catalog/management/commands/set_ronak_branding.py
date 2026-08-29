@@ -9,6 +9,7 @@ class Command(BaseCommand):
         if not s:
             s = SiteSettings.objects.create(
                 site_name='RONAK',
+                logo_url='/logo.png',
                 custom_logo_text='RONAK',
                 top_welcome_text='Welcome to RONAK — House of Premium Brands',
                 phone_display='1-800-RONAK',
@@ -20,6 +21,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('Created SiteSettings with RONAK branding.'))
         else:
             s.site_name = 'RONAK'
+            s.logo_url = '/logo.png'
             s.custom_logo_text = 'RONAK'
             s.top_welcome_text = 'Welcome to RONAK — House of Premium Brands'
             s.phone_display = '1-800-RONAK'

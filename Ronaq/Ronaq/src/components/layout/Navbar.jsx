@@ -184,28 +184,26 @@ export const Navbar = () => {
               </button>
 
               {/* Dynamic Brand Logo */}
-              <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group min-w-0">
+              <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group min-w-0">
                 {settings.logo_url ? (
                   <img
                     src={settings.logo_url}
                     alt={settings.site_name || 'Store Logo'}
-                    className="h-8 sm:h-10 max-w-[120px] sm:max-w-[160px] object-contain group-hover:scale-105 transition-transform"
+                    className="h-8 sm:h-9 w-8 sm:w-9 rounded-lg object-contain shadow-sm group-hover:scale-105 transition-transform shrink-0"
                   />
                 ) : (
-                  <>
-                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-br from-slate-900 via-amber-950 to-amber-700 flex items-center justify-center text-white shadow-md shadow-amber-900/20 group-hover:scale-105 transition-transform shrink-0">
-                      <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <span className="font-serif text-base sm:text-2xl font-bold tracking-wider text-slate-900 leading-none group-hover:text-amber-700 transition-colors truncate">
-                        {settings.site_name || 'RONAK'}
-                      </span>
-                      <span className="text-[7px] sm:text-[9px] uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em] text-amber-600 truncate">
-                        {settings.site_tagline || 'Luxury Collective'}
-                      </span>
-                    </div>
-                  </>
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-br from-slate-900 via-amber-950 to-amber-700 flex items-center justify-center text-white shadow-md shadow-amber-900/20 group-hover:scale-105 transition-transform shrink-0">
+                    <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
+                  </div>
                 )}
+                <div className="flex flex-col min-w-0">
+                  <span className="font-serif text-base sm:text-2xl font-bold tracking-wider text-slate-900 leading-none group-hover:text-amber-700 transition-colors truncate">
+                    {settings.site_name || 'RONAK'}
+                  </span>
+                  <span className="text-[7px] sm:text-[9px] uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em] text-amber-600 truncate">
+                    {settings.site_tagline || 'Luxury Collective'}
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -408,25 +406,23 @@ export const Navbar = () => {
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2.5"
               >
                 {settings.logo_url ? (
                   <img
                     src={settings.logo_url}
                     alt={settings.site_name || 'Logo'}
-                    className="h-8 max-w-[140px] object-contain"
+                    className="h-8 w-8 rounded-lg object-contain shadow-sm"
                   />
                 ) : (
-                  <>
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 shadow-md">
-                      <Crown className="w-4 h-4 font-black" />
-                    </div>
-                    <div>
-                      <span className="font-serif text-lg font-bold tracking-wider text-white block leading-tight">{settings.site_name || 'RONAK'}</span>
-                      <span className="text-[8px] uppercase font-bold tracking-widest text-amber-300">{settings.site_tagline || 'Luxury Collective'}</span>
-                    </div>
-                  </>
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 shadow-md">
+                    <Crown className="w-4 h-4 font-black" />
+                  </div>
                 )}
+                <div>
+                  <span className="font-serif text-lg font-bold tracking-wider text-white block leading-tight">{settings.site_name || 'RONAK'}</span>
+                  <span className="text-[8px] uppercase font-bold tracking-widest text-amber-300">{settings.site_tagline || 'Luxury Collective'}</span>
+                </div>
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}

@@ -90,7 +90,7 @@ class SiteSettings(models.Model):
     site_name = models.CharField(max_length=150, default='RONAK')
     site_tagline = models.CharField(max_length=255, default='Luxury Collective')
     site_description = models.TextField(default='Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.')
-    logo_url = models.CharField(max_length=500, blank=True, default='')
+    logo_url = models.CharField(max_length=500, blank=True, default='/logo.png')
     custom_logo_text = models.CharField(max_length=100, blank=True, default='RONAK')
     subbrand_velora_tagline = models.CharField(max_length=100, default='Cosmetics & Skincare')
     subbrand_elan_tagline = models.CharField(max_length=100, default='Luxury Apparel')

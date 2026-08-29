@@ -6,7 +6,7 @@ const DEFAULT_SETTINGS = {
   site_name: 'RONAK',
   site_tagline: 'Luxury Collective',
   site_description: 'Ronak is a premier luxury collective bringing together three distinct worlds of cosmetics, fashion, and athletic footwear under one standard of elegance.',
-  logo_url: '',
+  logo_url: '/logo.png',
   custom_logo_text: 'RONAK',
   subbrand_velora_tagline: 'Cosmetics & Skincare',
   subbrand_elan_tagline: 'Luxury Apparel',
