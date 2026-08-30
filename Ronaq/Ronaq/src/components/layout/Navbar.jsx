@@ -26,7 +26,10 @@ import {
   Package,
   Star,
   Settings,
-  Phone
+  Phone,
+  Banknote,
+  RotateCcw,
+  ShieldCheck
 } from 'lucide-react';
 
 
@@ -78,28 +81,33 @@ export const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full transition-all duration-300 font-sans shadow-sm">
-        {/* Top Announcement Bar */}
+        {/* Top Announcement Bar - High Conversion 3-Pillar Selling Ribbon */}
         {settings.announcement_enabled !== false && (
-          <div className="bg-gradient-to-r from-slate-900 via-amber-950 to-slate-900 text-amber-200 text-xs py-2 px-4">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <div className="hidden md:flex items-center gap-2 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                <span>{settings.top_welcome_text || `Welcome to ${settings.site_name || 'RONAK'} — House of Premium Brands`}</span>
-              </div>
-              <div className="text-center w-full md:w-auto font-medium text-[11px] md:text-xs">
-                {settings.announcement_text || '🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan'}
+          <div className="bg-gradient-to-r from-slate-950 via-amber-950 to-slate-950 text-amber-200 text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-amber-500/20">
+            <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-1.5 gap-x-3 text-center sm:text-left">
+              {/* Pillar 1: Free Delivery */}
+              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
+                <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>Free Delivery above <strong className="text-white font-bold">Rs. 2,999</strong></span>
               </div>
 
-              <div className="hidden lg:flex items-center gap-4 text-[11px] text-amber-300/80">
-                <Link to="/track-order" className="hover:text-amber-200 text-amber-300 font-bold transition-colors flex items-center gap-1">
-                  <Truck className="w-3 h-3" /> Track Order
+              {/* Pillar 2: Cash on Delivery */}
+              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
+                <Banknote className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Cash on Delivery <strong className="text-white font-bold">Available Nationwide</strong></span>
+              </div>
+
+              {/* Pillar 3: Easy Return & Exchange */}
+              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
+                <RotateCcw className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span>Easy <strong className="text-white font-bold">Return & Exchange</strong></span>
+              </div>
+
+              {/* Track Order link on desktop */}
+              <div className="hidden xl:flex items-center gap-2 text-[11px] text-amber-300/90 pl-3 border-l border-amber-500/30">
+                <Link to="/track-order" className="hover:text-white font-bold transition-colors flex items-center gap-1">
+                  <Package className="w-3 h-3 text-amber-400" /> Track Order
                 </Link>
-                <span>•</span>
-                <Link to="/velora" className="hover:text-amber-200 transition-colors">Velora</Link>
-                <span>•</span>
-                <Link to="/elan" className="hover:text-amber-200 transition-colors">Elan</Link>
-                <span>•</span>
-                <Link to="/stryde" className="hover:text-amber-200 transition-colors">Stryde</Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import { catalogAPI } from '../services/api';
 import { useSiteSettings } from '../context/SiteSettingsContext';
@@ -8,16 +9,24 @@ import { SortDropdown } from '../components/common/SortDropdown';
 import { Shirt, SlidersHorizontal, Scissors, Sparkles, Flame } from 'lucide-react';
 
 export const ElanPage = () => {
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category');
   const { settings } = useSiteSettings();
   const [elanProducts, setElanProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(categoryParam ? [categoryParam] : []);
   const [priceRange, setPriceRange] = useState([0, 15000]);
   const [onlySale, setOnlySale] = useState(false);
   const [minRating, setMinRating] = useState(0);
   const [sortBy, setSortBy] = useState('featured');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  useEffect(() => {
+    if (categoryParam) {
+      setSelectedCategories([categoryParam]);
+    }
+  }, [categoryParam]);
 
 
 

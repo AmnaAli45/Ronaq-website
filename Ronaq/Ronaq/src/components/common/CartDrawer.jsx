@@ -35,7 +35,7 @@ export const CartDrawer = () => {
     }
   };
 
-  const freeShippingGoal = 2500.00;
+  const freeShippingGoal = 2999.00;
   const progressToFreeShipping = Math.min(100, (subtotal / freeShippingGoal) * 100);
 
   return (

@@ -15,8 +15,8 @@ const DEFAULT_SETTINGS = {
 
   // Top Announcement Bar & Offers
   announcement_enabled: true,
-  announcement_text: '🎉 FREE EXPRESS COURIER SHIPPING on all orders over Rs. 2,500 across Pakistan',
-  announcement_badge: 'SPECIAL OFFER',
+  announcement_text: '🎉 FREE EXPRESS DELIVERY on orders over Rs. 2,999 | Cash on Delivery Available Nationwide',
+  announcement_badge: 'LIMITED OFFER',
   announcement_link: '/velora',
   top_welcome_text: 'Welcome to RONAK — House of Premium Brands',
 
@@ -27,7 +27,7 @@ const DEFAULT_SETTINGS = {
   address: 'Ronak Luxury HQ, Lahore, Pakistan',
 
   // Shipping Thresholds & Currency
-  free_shipping_threshold: 2500.00,
+  free_shipping_threshold: 2999.00,
   currency_symbol: 'Rs.',
 
 
@@ -38,9 +38,9 @@ const DEFAULT_SETTINGS = {
   youtube_url: 'https://youtube.com',
 
   // Hero Banners
-  home_hero_title: 'One Destination. Three Iconic Sub-Brands.',
-  home_hero_subtitle: 'Experience Velora skincare, Elan luxury apparel, and Stryde athletic footwear under Ronak’s unified multi-brand house.',
-  home_hero_badge: 'The Premier Luxury Umbrella Brand',
+  home_hero_title: 'Your Style. Your RONAK.',
+  home_hero_subtitle: 'Discover Pakistan’s ultimate collective: Pure Velora Skincare, Elegant Elan Apparel, and High-Performance Stryde Footwear with nationwide Cash on Delivery and easy returns.',
+  home_hero_badge: 'Pakistan’s Premier Multi-Brand House',
   home_hero_image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80',
 
   velora_hero_title: 'Velora Cosmetics & Skincare',
