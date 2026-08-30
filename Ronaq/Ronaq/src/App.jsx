@@ -17,6 +17,7 @@ import { HomePage } from './pages/HomePage';
 import { VeloraPage } from './pages/VeloraPage';
 import { ElanPage } from './pages/ElanPage';
 import { StrydePage } from './pages/StrydePage';
+import { AccessoriesPage } from './pages/AccessoriesPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { OrderConfirmationPage } from './pages/OrderConfirmationPage';
@@ -58,6 +59,7 @@ export function App() {
                     <Route path="/velora" element={<VeloraPage />} />
                     <Route path="/elan" element={<ElanPage />} />
                     <Route path="/stryde" element={<StrydePage />} />
+                    <Route path="/accessories" element={<AccessoriesPage />} />
                     <Route path="/product/:id" element={<ProductDetailPage />} />
                     <Route path="/cart" element={<CartPage />} />
                     <Route path="/wishlist" element={<WishlistPage />} />

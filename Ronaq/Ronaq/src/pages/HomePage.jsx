@@ -60,11 +60,11 @@ const CATEGORIES_DATA = [
   {
     id: 'accessories',
     title: 'Accessories',
-    subtitle: 'Lip Stains, Mists & Lifestyle',
+    subtitle: 'Wallets, Eyewear, Bags & Watches',
     badge: 'Must Haves',
-    brand: 'Velora / Elan',
+    brand: 'Ronak Luxe',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
-    link: '/velora?category=Lip+%26+Makeup',
+    link: '/accessories',
     accentColor: 'from-rose-600/90 via-slate-900/80 to-slate-950'
   },
   {
@@ -453,7 +453,8 @@ export const HomePage = () => {
               { id: 'all', label: 'All Products' },
               { id: 'velora', label: 'Velora Skincare' },
               { id: 'elan', label: 'Elan Apparel' },
-              { id: 'stryde', label: 'Stryde Footwear' }
+              { id: 'stryde', label: 'Stryde Footwear' },
+              { id: 'accessories', label: 'Accessories Luxe' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -485,7 +486,7 @@ export const HomePage = () => {
 
         <div className="text-center pt-4">
           <Link
-            to={activeTab === 'velora' ? '/velora' : activeTab === 'elan' ? '/elan' : activeTab === 'stryde' ? '/stryde' : '/elan'}
+            to={activeTab === 'velora' ? '/velora' : activeTab === 'elan' ? '/elan' : activeTab === 'stryde' ? '/stryde' : activeTab === 'accessories' ? '/accessories' : '/elan'}
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 hover:bg-amber-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
           >
             <span>Explore Full Catalog</span>

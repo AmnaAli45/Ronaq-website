@@ -676,6 +676,194 @@ export const PRODUCTS = [
     shadesOrSizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
     ingredients: 'Oiled Bovine Leather, Rubber Lug Sole.',
     howToUse: 'Apply leather balm for moisture resistance.'
+  },
+
+  // ==========================================
+  // ACCESSORIES & LIFESTYLE (Ronak Luxe)
+  // ==========================================
+  {
+    id: 'accessories-1',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Artisan Full-Grain Leather Bifold Wallet',
+    category: 'Wallets',
+    price: 3200,
+    originalPrice: 4200,
+    discountBadge: '24% OFF',
+    rating: 4.92,
+    reviewsCount: 142,
+    isBestSeller: true,
+    isNewArrival: false,
+    image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Handcrafted from vegetable-tanned full-grain cowhide with RFID blocking protection, 8 card slots, and dual currency compartments.',
+    features: ['100% Genuine Full-Grain Leather', 'RFID Theft Protection', 'Dual Cash Currency Slots', 'Slim Pocket-Friendly Profile'],
+    shadesOrSizes: ['Cognac Brown', 'Midnight Black', 'Vintage Tan'],
+    ingredients: 'Bovine Leather, RFID Shielding Mesh, Cotton Twill Lining.',
+    howToUse: 'Condition with leather cream twice a year.'
+  },
+  {
+    id: 'accessories-2',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Polarized Aviator Sunglasses (UV400)',
+    category: 'Eyewear',
+    price: 3800,
+    originalPrice: 4800,
+    discountBadge: '20% OFF',
+    rating: 4.88,
+    reviewsCount: 96,
+    isBestSeller: true,
+    isNewArrival: false,
+    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Classic metallic gold teardrop aviators with polarized anti-glare scratch-resistant lenses and 100% UV400 sun protection.',
+    features: ['100% UV400 Protection', 'Polarized Anti-Glare TAC Lenses', 'Lightweight Stainless Frame', 'Includes Hard Case & Microfiber Cloth'],
+    shadesOrSizes: ['Gold / Dark Green Lens', 'Silver / Mirror Blue', 'Gunmetal / Smoke Black'],
+    ingredients: 'Stainless Steel Alloy, TAC Polarized Lens, Silicone Nose Pads.',
+    howToUse: 'Wipe with microfiber cloth. Store in hard case when not in use.'
+  },
+  {
+    id: 'accessories-3',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Quilted Crossbody Mini Leather Bag',
+    category: 'Bags & Totes',
+    price: 6800,
+    originalPrice: 8500,
+    discountBadge: '20% OFF',
+    rating: 4.95,
+    reviewsCount: 184,
+    isBestSeller: true,
+    isNewArrival: true,
+    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Elegant chevron-quilted nappa leather handbag with polished gold-tone hardware, twist lock, and adjustable chain crossbody strap.',
+    features: ['Ultra-soft Quilted Nappa Leather', 'Gold-plated Twist Lock', 'Interior Zipper & Slip Pocket', 'Adjustable Shoulder / Crossbody Chain'],
+    shadesOrSizes: ['Ivory Cream', 'Emerald Green', 'Classic Black', 'Blush Pink'],
+    ingredients: 'Nappa Bovine Leather, Gold-plated Zinc Alloy, Satin Interior.',
+    howToUse: 'Wipe gently with damp soft cloth.'
+  },
+  {
+    id: 'accessories-4',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Executive Minimalist Chronograph Watch',
+    category: 'Watches',
+    price: 7500,
+    originalPrice: 9900,
+    discountBadge: '25% OFF',
+    rating: 4.9,
+    reviewsCount: 110,
+    isBestSeller: true,
+    isNewArrival: false,
+    image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Sleek matte black stainless steel case with sapphire crystal glass, precision Japanese quartz movement, and interchangeable genuine leather strap.',
+    features: ['3ATM Water Resistant', 'Scratch-Proof Sapphire Glass', 'Japanese Miyota Quartz Movement', 'Interchangeable Quick-Release Strap'],
+    shadesOrSizes: ['Black Dial / Brown Leather', 'Silver Dial / Black Leather', 'All-Black Stealth'],
+    ingredients: '316L Stainless Steel, Sapphire Crystal, Genuine Leather.',
+    howToUse: 'Avoid submerging in hot water or steam.'
+  },
+  {
+    id: 'accessories-5',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Hand-Printed Pure Silk Luxury Scarf',
+    category: 'Scarves',
+    price: 2900,
+    originalPrice: 3800,
+    discountBadge: '23% OFF',
+    rating: 4.85,
+    reviewsCount: 78,
+    isBestSeller: false,
+    isNewArrival: true,
+    image: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: '100% mulberry silk twill square scarf featuring intricate floral baroque motifs and hand-rolled edges for versatile styling.',
+    features: ['100% Pure Mulberry Silk Twill', 'Hand-Rolled Artisan Edges', 'Fade-Resistant Eco Reactive Dyes', '90cm x 90cm Square Dimension'],
+    shadesOrSizes: ['Golden Baroque', 'Royal Indigo Blue', 'Emerald Flora'],
+    ingredients: '100% Mulberry Silk.',
+    howToUse: 'Dry clean or gentle hand wash in cold water with mild detergent.'
+  },
+  {
+    id: 'accessories-6',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Reversible Italian Leather Dress Belt',
+    category: 'Belts',
+    price: 2600,
+    originalPrice: 3400,
+    discountBadge: '23% OFF',
+    rating: 4.79,
+    reviewsCount: 65,
+    isBestSeller: false,
+    isNewArrival: true,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Dual-tone Black and Cognac Brown reversible belt with brushed nickel twist buckle for effortless formal and casual styling.',
+    features: ['2-in-1 Reversible Black & Brown', 'Solid Full-Grain Leather Strap', 'Heavy-Duty Twist Reversible Buckle', 'Precision Beveled Edge Finishing'],
+    shadesOrSizes: ['32 - 34 Inch', '36 - 38 Inch', '40 - 42 Inch'],
+    ingredients: 'Full-Grain Leather, Zinc Nickel Alloy Buckle.',
+    howToUse: 'Pull and twist buckle 180 degrees to switch colors.'
+  },
+  {
+    id: 'accessories-7',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: 'Velvet Cosmetic & Travel Vanity Case',
+    category: 'Pouches & Cases',
+    price: 2200,
+    originalPrice: 2800,
+    discountBadge: '21% OFF',
+    rating: 4.93,
+    reviewsCount: 130,
+    isBestSeller: true,
+    isNewArrival: false,
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Waterproof lined plush velvet organizer pouch with custom gold zippers to safely carry skincare bottles and cosmetics on the go.',
+    features: ['Plush Velvet Outer with Spill-Proof Lining', 'Heavy-Duty Gold Zipper Closure', 'Elastic Brush Slots & Inner Divider', 'Compact Travel Size'],
+    shadesOrSizes: ['Dusty Rose', 'Midnight Navy', 'Emerald Green'],
+    ingredients: 'Polyester Velvet, Waterproof PVC Lining, Brass Zipper.',
+    howToUse: 'Wipe interior with damp cloth.'
+  },
+  {
+    id: 'accessories-8',
+    brand: 'Ronak Luxe',
+    brandSlug: 'accessories',
+    name: '18K Gold-Plated Herringbone Chain Necklace',
+    category: 'Jewelry',
+    price: 3400,
+    originalPrice: 4500,
+    discountBadge: '24% OFF',
+    rating: 4.87,
+    reviewsCount: 88,
+    isBestSeller: false,
+    isNewArrival: true,
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Tarnish-free waterproof 18K gold-dipped flat herringbone snake chain with high polish shine and secure lobster claw clasp.',
+    features: ['18K PVD Gold Plating (Tarnish-Proof)', 'Hypoallergenic & Nickel-Free', 'Water & Sweat Resistant', '45cm Length with 5cm Extension'],
+    shadesOrSizes: ['3mm Width / 45cm', '5mm Width / 45cm'],
+    ingredients: '316L Surgical Stainless Steel, 18K Yellow Gold PVD.',
+    howToUse: 'Safe for daily wear and showers. Polish with dry cloth.'
   }
 ];
 

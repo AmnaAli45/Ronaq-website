@@ -88,6 +88,11 @@ export const Footer = () => {
                 <Footprints className="w-3.5 h-3.5 text-amber-500" /> Stryde ({settings.subbrand_stryde_tagline || 'Shoes'})
               </Link>
             </li>
+            <li>
+              <Link to="/accessories" className="hover:text-rose-300 transition-colors flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-rose-400" /> Ronak Accessories (Luxe)
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -76,6 +76,7 @@ export const Navbar = () => {
   const activeSubBrand = location.pathname.includes('/velora') ? 'velora'
     : location.pathname.includes('/elan') ? 'elan'
     : location.pathname.includes('/stryde') ? 'stryde'
+    : location.pathname.includes('/accessories') ? 'accessories'
     : 'ronak';
 
   return (
@@ -155,6 +156,18 @@ export const Navbar = () => {
               >
                 <Footprints className="w-3 h-3 text-amber-400 shrink-0" />
                 <span>Stryde <span className="text-[10px] opacity-75 font-normal hidden sm:inline">({settings.subbrand_stryde_tagline || 'Footwear'})</span></span>
+              </Link>
+              <span className="text-slate-700 hidden sm:inline">|</span>
+              <Link
+                to="/accessories"
+                className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs transition-all flex items-center gap-1 sm:gap-1.5 shrink-0 ${
+                  activeSubBrand === 'accessories'
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold'
+                    : 'hover:text-amber-300 hover:bg-slate-800'
+                }`}
+              >
+                <Sparkles className="w-3 h-3 text-rose-400 shrink-0" />
+                <span>Accessories <span className="text-[10px] opacity-75 font-normal hidden sm:inline">(Luxe)</span></span>
               </Link>
             </div>
             <div className="hidden sm:flex items-center gap-3 shrink-0">
@@ -246,6 +259,13 @@ export const Navbar = () => {
                 className={`hover:text-amber-700 transition-colors ${location.pathname === '/stryde' ? 'text-amber-700 font-extrabold border-b-2 border-amber-600 pb-1' : ''}`}
               >
                 Stryde <span className="text-[10px] font-normal text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200">Shoes</span>
+              </Link>
+
+              <Link
+                to="/accessories"
+                className={`hover:text-amber-700 transition-colors ${location.pathname === '/accessories' ? 'text-amber-700 font-extrabold border-b-2 border-amber-600 pb-1' : ''}`}
+              >
+                Accessories <span className="text-[10px] font-normal text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">Luxe</span>
               </Link>
             </nav>
 
@@ -521,6 +541,20 @@ export const Navbar = () => {
                     Stryde Footwear
                   </span>
                   <span className="text-[10px] bg-cyan-100 text-cyan-800 font-black px-2 py-0.5 rounded-full">Shoes</span>
+                </Link>
+
+                <Link
+                  to="/accessories"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-bold transition-colors ${
+                    location.pathname === '/accessories' ? 'bg-rose-50 text-rose-900' : 'text-slate-700 hover:bg-slate-50'
+                  }`}
+                >
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-rose-600" />
+                    Ronak Accessories
+                  </span>
+                  <span className="text-[10px] bg-rose-100 text-rose-800 font-black px-2 py-0.5 rounded-full">Luxe</span>
                 </Link>
               </div>
 
