@@ -10,6 +10,7 @@ import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/common/CartDrawer';
 import { RightSideReviewsDrawer } from './components/common/RightSideReviewsDrawer';
 import { Toast } from './components/common/Toast';
+import { PromoPopup } from './components/common/PromoPopup';
 
 
 
@@ -94,6 +95,9 @@ export function App() {
 
                 {/* Floating Toast Notification */}
                 <Toast />
+
+                {/* Promotional Welcome Popup */}
+                <PromoPopup />
 
 
               </div>

@@ -82,38 +82,6 @@ export const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full transition-all duration-300 font-sans shadow-sm">
-        {/* Top Announcement Bar - High Conversion 3-Pillar Selling Ribbon */}
-        {settings.announcement_enabled !== false && (
-          <div className="bg-gradient-to-r from-slate-950 via-amber-950 to-slate-950 text-amber-200 text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-amber-500/20">
-            <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-1.5 gap-x-3 text-center sm:text-left">
-              {/* Pillar 1: Free Delivery */}
-              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
-                <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Free Delivery above <strong className="text-white font-bold">Rs. 2,999</strong></span>
-              </div>
-
-              {/* Pillar 2: Cash on Delivery */}
-              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
-                <Banknote className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Cash on Delivery <strong className="text-white font-bold">Available Nationwide</strong></span>
-              </div>
-
-              {/* Pillar 3: Easy Return & Exchange */}
-              <div className="flex items-center justify-center gap-1.5 font-semibold text-amber-300">
-                <RotateCcw className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Easy <strong className="text-white font-bold">Return & Exchange</strong></span>
-              </div>
-
-              {/* Track Order link on desktop */}
-              <div className="hidden xl:flex items-center gap-2 text-[11px] text-amber-300/90 pl-3 border-l border-amber-500/30">
-                <Link to="/track-order" className="hover:text-white font-bold transition-colors flex items-center gap-1">
-                  <Package className="w-3 h-3 text-amber-400" /> Track Order
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Sub-Brand Navigation Strip */}
         <div className="bg-slate-900 border-b border-slate-800 text-slate-300 py-1.5 px-3 sm:px-4 text-xs font-semibold">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">

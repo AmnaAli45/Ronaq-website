@@ -14,7 +14,7 @@ const DEFAULT_SETTINGS = {
   subbrand_stryde_tagline: 'Athletic Footwear',
 
   // Top Announcement Bar & Offers
-  announcement_enabled: true,
+  announcement_enabled: false,
   announcement_text: '🎉 FREE EXPRESS DELIVERY on orders over Rs. 2,999 | Cash on Delivery Available Nationwide',
   announcement_badge: 'LIMITED OFFER',
   announcement_link: '/velora',
